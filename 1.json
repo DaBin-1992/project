@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "niewenbin",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "niewenbin222",
+      "password": "12333456"
+    },
+    {
+      "id": 3
+    },
+    {
+      "username": "gangdan",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "username": "gangdan",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "username": "xiaoming",
+      "password": "666",
+      "id": 6
+    },
+    {
+      "username": "xiaoming",
+      "password": "666",
+      "id": 7
+    },
+    {
+      "username": "xiaoming",
+      "password": "666",
+      "id": 8
+    },
+    {
+      "username": "xiaoming",
+      "password": "666",
+      "id": 10
+    },
+    {
+      "username": "xiaoming",
+      "password": "666",
+      "id": 11
+    }
+  ]
+}
