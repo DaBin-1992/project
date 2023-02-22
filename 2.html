@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="myget">GET</button>
+  <button id="mypost">post</button>
+  <button id="myput">put</button>
+  <button id="mypatch">patch</button>
+  <button id="mydelete">delete</button>
+  <script>
+    myget.onclick = function () {
+      let xhr = new XMLHttpRequest
+      // xhr.open('GET', 'http://localhost:3000/users')
+      xhr.open('GET', 'http://localhost:3000/users?username?xiaoming&password=666')
+      xhr.send()
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(JSON.parse(xhr.responseText));
+        }
+      }
+    }
+
+
+    mypost.onclick = function () {
+      let xhr = new XMLHttpRequest
+      xhr.open('POST', 'http://localhost:3000/users')
+      // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+      // xhr.send(`username=gangdan&password=123`)
+      xhr.setRequestHeader('Content-Type', 'application/json')
+      xhr.send(JSON.stringify({
+        username: 'xiaoming',
+        password: '666'
+      }))
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(JSON.parse(xhr.responseText));
+        }
+      }
+    }
+
+
+    myput.onclick = function () {
+      let xhr = new XMLHttpRequest
+      xhr.open('PUT', 'http://localhost:3000/users/9')
+      xhr.setRequestHeader('Content-Type', 'application/json')
+      xhr.send(JSON.stringify({
+        username: 'xiaoming999',
+        password: '666'
+      }))
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(JSON.parse(xhr.responseText));
+        }
+      }
+    }
+
+
+    mypatch.onclick = function () {
+      let xhr = new XMLHttpRequest
+      xhr.open('PATCH', 'http://localhost:3000/users/9')
+      xhr.setRequestHeader('Content-Type', 'application/json')
+      xhr.send(JSON.stringify({
+        username: 'xiaoming33338882',
+        password: '666779999788'
+      }))
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(JSON.parse(xhr.responseText));
+        }
+      }
+    }
+
+
+    mydelete.onclick = function () {
+      let xhr = new XMLHttpRequest
+      xhr.open('DELETE', 'http://localhost:3000/users/9')
+      xhr.send()
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(JSON.parse(xhr.responseText));
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
